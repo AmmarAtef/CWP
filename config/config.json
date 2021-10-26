@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "weather-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/weather/WeatherWebPart.js",
+          "manifest": "./src/webparts/weather/WeatherWebPart.manifest.json"
+        }
+      ]
+    },
+    "calendar-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/calendar/CalendarWebPart.js",
+          "manifest": "./src/webparts/calendar/CalendarWebPart.manifest.json"
+        }
+      ]
+    },
+    "quick-links-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/quickLinks/QuickLinksWebPart.js",
+          "manifest": "./src/webparts/quickLinks/QuickLinksWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    
+  },
+  "localizedResources": {
+    "WeatherWebPartStrings": "lib/webparts/weather/loc/{locale}.js",
+    "CalendarWebPartStrings": "lib/webparts/calendar/loc/{locale}.js",
+    "QuickLinksWebPartStrings": "lib/webparts/quickLinks/loc/{locale}.js"
+  }
+}

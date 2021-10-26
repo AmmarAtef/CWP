@@ -1,0 +1,13 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": false,
+    "environment": "spo",
+    "version": "1.13.0",
+    "libraryName": "mannai-common-web-parts",
+    "libraryId": "d8f981f9-8f7a-4657-b21b-88190c460e0e",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
