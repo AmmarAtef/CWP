@@ -26,6 +26,12 @@ export default class WeatherWebPart extends BaseClientSideWebPart<IWeatherWebPar
       SPComponentLoader.loadCss(
         "/IntranetDemo/Assets/css/lightslider.css"
         );
+        SPComponentLoader.loadCss(
+          "/IntranetDemo/Assets/css/bootstrap.min.css"
+          );
+          SPComponentLoader.loadCss(
+            "/IntranetDemo/Assets/css/all.css"
+            );
   }
 
   public render(): void {

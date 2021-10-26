@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+<Field ID="{5028ebb5-43ba-4d67-82ae-61b443dbecbe}"
+  Name="HOTLINENUMBERS"
+  DisplayName="HOTLINE NUMBERS"
+  Type="Number"
+  Required="False"   
+  Min="1"
+  Max="12321321312"
+  Percentage="FALSE"  
+  Group="HotLine Columns" /> 
+
+
+<ContentType ID="20392113-8f68-430d-962b-18fe3d01aaaf" 
+            Name="HotLineContentType" 
+            Group="HotLine Content Type" 
+            Description="This is the Content Type for HotLine Details">
+        <FieldRefs>
+            <FieldRef ID="{5028ebb5-43ba-4d67-82ae-61b443dbecbe}" /> 
+        </FieldRefs>
+</ContentType> 
+    <ListInstance 
+            CustomSchema="schema.xml"
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="HotLineDetails" 
+            Description="HotLine Details List created using SharePoint Framework"
+            TemplateType="100"
+            Url="Lists/HotLine">
+     </ListInstance>
+
+
+</Elements>
+
+

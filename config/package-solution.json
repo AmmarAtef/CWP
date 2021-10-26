@@ -6,6 +6,22 @@
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
+    "features": [
+      {
+        "title": "sp-fx-Common-web-parts",
+        "description": "sp-fx-Common-web-parts",
+        "id": "5554bcf1-cbdd-4566-9147-9c5f0cb75614",
+        "version": "1.0.0.0",
+        "assets": {        
+          "elementManifests": [
+            "elements.xml"
+          ],
+          "elementFiles":[
+            "schema.xml"
+          ]
+        }
+      }
+    ],
     "developer": {
       "name": "",
       "websiteUrl": "",

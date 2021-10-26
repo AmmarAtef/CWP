@@ -35,10 +35,30 @@ export default class QuickLinksWebPart extends BaseClientSideWebPart<IQuickLinks
   public render(): void {
     this.domElement.innerHTML = `
     <nav class="navbar d-none d-md-block">
-    <ul class="navbar-nav w-100 text-capitalize p-4" id="tree">
-    
-    </ul>
-  </nav>`;
+              <ul class="navbar-nav w-100 text-capitalize p-4">
+                <li class="nav-item bord-btm">
+                  <a class="nav-link text-light" href="#">about us</a>
+                </li>
+                <li class="nav-item bord-btm">
+                  <a class="nav-link text-light" href="#">department</a>
+                </li>
+                <li class="nav-item bord-btm">
+                  <a class="nav-link text-light" href="#">media center</a>
+                </li>
+                <li class="nav-item bord-btm">
+                  <a class="nav-link text-light" href="#">document library</a>
+                </li>
+                <li class="nav-item bord-btm">
+                  <a class="nav-link text-light" href="#">project center</a>
+                </li>
+                <li class="nav-item bord-btm">
+                  <a class="nav-link text-light" href="#">services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#">contacts</a>
+                </li>
+              </ul>
+            </nav>`;
     this.get();
   }
 
