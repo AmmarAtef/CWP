@@ -1,7 +1,7 @@
 <List xmlns:ows="Microsoft SharePoint" Title="Basic List" EnableContentTypes="TRUE" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
   <MetaData>
     <ContentTypes>
-      <ContentTypeRef ID="7feb6f22-687b-469e-9bd1-ef027ddb5d00" />
+      <ContentTypeRef ID="0x01007ddc5d47717240779c4b36ca36425f05" />
     </ContentTypes>
     <Fields></Fields>
     <Views>

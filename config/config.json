@@ -25,14 +25,21 @@
           "manifest": "./src/webparts/quickLinks/QuickLinksWebPart.manifest.json"
         }
       ]
+    },
+    "hot-line-numbers-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/hotLineNumbers/HotLineNumbersWebPart.js",
+          "manifest": "./src/webparts/hotLineNumbers/HotLineNumbersWebPart.manifest.json"
+        }
+      ]
     }
   },
-  "externals": {
-    
-  },
+  "externals": {},
   "localizedResources": {
     "WeatherWebPartStrings": "lib/webparts/weather/loc/{locale}.js",
     "CalendarWebPartStrings": "lib/webparts/calendar/loc/{locale}.js",
-    "QuickLinksWebPartStrings": "lib/webparts/quickLinks/loc/{locale}.js"
+    "QuickLinksWebPartStrings": "lib/webparts/quickLinks/loc/{locale}.js",
+    "HotLineNumbersWebPartStrings": "lib/webparts/hotLineNumbers/loc/{locale}.js"
   }
 }
