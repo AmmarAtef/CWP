@@ -1,7 +1,7 @@
 <List xmlns:ows="Microsoft SharePoint" Title="Basic List" EnableContentTypes="TRUE" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
   <MetaData>
     <ContentTypes>
-      <ContentTypeRef ID="20392113-8f68-430d-962b-18fe3d01aaaf" />
+      <ContentTypeRef ID="7feb6f22-687b-469e-9bd1-ef027ddb5d00" />
     </ContentTypes>
     <Fields></Fields>
     <Views>
@@ -11,7 +11,8 @@
         <RowLimit Paged="TRUE">30</RowLimit>
         <Toolbar Type="Standard" />
         <ViewFields>
-          <FieldRef Name="HOTLINENUMBERS"></FieldRef>
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="HotLine"></FieldRef>
         </ViewFields>
         <Query>
           <OrderBy>
@@ -26,4 +27,4 @@
       <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
     </Forms>
  </MetaData>
-</List
+</List>

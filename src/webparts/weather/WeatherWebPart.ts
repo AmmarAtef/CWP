@@ -50,12 +50,12 @@ export default class WeatherWebPart extends BaseClientSideWebPart<IWeatherWebPar
 
 private getData(){
   const url = new URL('https://api.weatherapi.com/v1/current.json?key=300ef357d4164ac98a390615211910&q=Doha&aqi=no');
-    (async function () {
+    (async () =>{
       const response = await fetch( url.toString());
       const data = await response.json();
        $("#degree").text(data.current.feelslike_c +" °C ");
        $("#place").text(data.current.condition.text+", "+data.location.name);
-    })()
+    })();
 }
 
   protected get dataVersion(): Version {

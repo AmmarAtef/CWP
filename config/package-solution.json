@@ -1,17 +1,17 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "mannai-common-web-parts-client-side-solution",
-    "id": "d8f981f9-8f7a-4657-b21b-88190c460e0e",
-    "version": "1.0.0.0",
+    "name": "mannai-common-web-parts-client-side",
+    "id": "89972152-6ab2-4705-b222-109cae82c46f",
+    "version": "1.0.0.6",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [
       {
         "title": "sp-fx-Common-web-parts",
         "description": "sp-fx-Common-web-parts",
-        "id": "5554bcf1-cbdd-4566-9147-9c5f0cb75614",
-        "version": "1.0.0.0",
+        "id": "09303037-6ed9-4568-95bf-f37a55c57da9",
+        "version": "1.0.0.6",
         "assets": {        
           "elementManifests": [
             "elements.xml"
@@ -31,6 +31,6 @@
     }
   },
   "paths": {
-    "zippedPackage": "solution/mannai-common-web-parts.sppkg"
+    "zippedPackage": "solution/mannai-common-web-part.sppkg"
   }
 }
