@@ -33,6 +33,14 @@
           "manifest": "./src/webparts/hotLineNumbers/HotLineNumbersWebPart.manifest.json"
         }
       ]
+    },
+    "new-joinees-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/newJoinees/NewJoineesWebPart.js",
+          "manifest": "./src/webparts/newJoinees/NewJoineesWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -40,6 +48,7 @@
     "WeatherWebPartStrings": "lib/webparts/weather/loc/{locale}.js",
     "CalendarWebPartStrings": "lib/webparts/calendar/loc/{locale}.js",
     "QuickLinksWebPartStrings": "lib/webparts/quickLinks/loc/{locale}.js",
-    "HotLineNumbersWebPartStrings": "lib/webparts/hotLineNumbers/loc/{locale}.js"
+    "HotLineNumbersWebPartStrings": "lib/webparts/hotLineNumbers/loc/{locale}.js",
+    "NewJoineesWebPartStrings": "lib/webparts/newJoinees/loc/{locale}.js"
   }
 }

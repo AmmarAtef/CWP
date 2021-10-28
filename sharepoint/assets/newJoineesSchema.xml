@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<List xmlns:ows="Microsoft SharePoint" Title="NewJoiners" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/NewJoiners" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/" EnableContentTypes="TRUE">
+<List xmlns:ows="Microsoft SharePoint" Title="NewJoinees" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/NewJoinees" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/" EnableContentTypes="TRUE">
 	<MetaData>
 		<ContentTypes>
-			<ContentType ID="0x010031c2b801a66a478eb6b0e32a5a948a76" Name="NewJoinersContentType" Group="NewJoiners Content Type" Description="This is the Content Type for NewJoinersContentType" Inherits="TRUE" Version="0">
+			<ContentType ID="0x010031c2b801a66a478eb6b0e32a5a948a76" Name="NewJoineesContentType" Group="NewJoinees Content Type" Description="This is the Content Type for NewJoineesContentType" Inherits="TRUE" Version="0">
 		  <FieldRefs>
-            <FieldRef ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}"  Name="NewJoinerJobTitle"
+            <FieldRef ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}"  Name="NewJoineeJobTitle"
                DisplayName="Job Title"
                Required="TRUE"/>
             <FieldRef ID="{07607a51-5384-4d6d-8e6c-98587b825d8f}" 
                DisplayName="Photo"
 	             Required="TRUE"
-		           Name="NewJoinerPhoto"/> 
+		           Name="NewJoineePhoto"/> 
             <FieldRef ID="{6caedc83-c75b-4573-b1e1-6517f24ca1d9}"
-               Name="NewJoinerDepartment"
+               Name="NewJoineeDepartment"
                DisplayName="Department"
                Required="TRUE" /> 
-            <FieldRef ID="{809820ed-bb10-420c-a06a-983958c10664}" Name="NewJoinerPhoneNumber"
+            <FieldRef ID="{809820ed-bb10-420c-a06a-983958c10664}" Name="NewJoineePhoneNumber"
             DisplayName="PhoneNumber"
             Required="TRUE" /> 
-            <FieldRef ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}" Name="NewJoinerBrief"
+            <FieldRef ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}" Name="NewJoineeBrief"
             DisplayName="Brief"
             Required="TRUE"/> 
         </FieldRefs>
@@ -31,7 +31,7 @@
 		<Fields>
 
 <Field ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}"
-            Name="NewJoinerJobTitle"
+            Name="NewJoineeJobTitle"
             DisplayName="Job Title"
             Type="Text"
             Required="TRUE"
@@ -46,24 +46,24 @@
 		Required="TRUE"
 		RichTextMode="FullHtml"
 		DisplaceOnUpgrade="TRUE"
-		Name="NewJoinerPhoto"/>
+		Name="NewJoineePhoto"/>
 
 
 <Field ID="{6caedc83-c75b-4573-b1e1-6517f24ca1d9}"
-            Name="NewJoinerDepartment"
+            Name="NewJoineeDepartment"
             DisplayName="Department"
             Type="Text"
             Required="TRUE"
             Group="New Joiners" />
 
 <Field ID="{809820ed-bb10-420c-a06a-983958c10664}"
-            Name="NewJoinerPhoneNumber"
+            Name="NewJoineePhoneNumber"
             DisplayName="PhoneNumber"
             Type="Text"
             Required="TRUE"
             Group="New Joiners" />
 <Field ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}"
-            Name="NewJoinerBrief"
+            Name="NewJoineeBrief"
             DisplayName="Brief"
             Type="Note"
             Required="TRUE"
@@ -98,10 +98,10 @@
 				<RowLimit Paged="TRUE">30</RowLimit>
 				<ViewFields>
 
-					<FieldRef Name="NewJoinerName"></FieldRef>
-					<FieldRef Name="NewJoinerJobTitle"></FieldRef>
+					<FieldRef Name="NewJoineeName"></FieldRef>
+					<FieldRef Name="NewJoineeJobTitle"></FieldRef>
 					<FieldRef Name="Department"></FieldRef>
-          <FieldRef Name="PhoneNumber"></FieldRef>
+                    <FieldRef Name="PhoneNumber"></FieldRef>
 					<FieldRef Name="Brief"></FieldRef>
 
 					

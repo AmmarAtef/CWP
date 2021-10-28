@@ -44,7 +44,7 @@
 
 
 <Field ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}"
-            Name="NewJoinerJobTitle"
+            Name="NewJoineeJobTitle"
             DisplayName="Job Title"
             Type="Text"
             Required="TRUE"
@@ -59,24 +59,24 @@
 		Required="TRUE"
 		RichTextMode="FullHtml"
 		DisplaceOnUpgrade="TRUE"
-		Name="NewJoinerPhoto"/>
+		Name="NewJoineePhoto"/>
 
 
 <Field ID="{6caedc83-c75b-4573-b1e1-6517f24ca1d9}"
-            Name="NewJoinerDepartment"
+            Name="NewJoineeDepartment"
             DisplayName="Department"
             Type="Text"
             Required="TRUE"
             Group="New Joiners" />
 
 <Field ID="{809820ed-bb10-420c-a06a-983958c10664}"
-            Name="NewJoinerPhoneNumber"
+            Name="NewJoineePhoneNumber"
             DisplayName="PhoneNumber"
             Type="Text"
             Required="TRUE"
             Group="New Joiners" />
 <Field ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}"
-            Name="NewJoinerBrief"
+            Name="NewJoineeBrief"
             DisplayName="Brief"
             Type="Note"
             Required="TRUE"
@@ -84,9 +84,9 @@
 
 
 <ContentType ID="0x010031c2b801a66a478eb6b0e32a5a948a76" 
-            Name="NewJoinersContentType" 
-            Group="NewJoiners Content Type" 
-            Description="This is the Content Type for NewJoinersContentType">
+            Name="NewJoineesContentType" 
+            Group="NewJoinees Content Type" 
+            Description="This is the Content Type for NewJoineesContentType">
         <FieldRefs>
             <FieldRef ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}" />
              <FieldRef ID="{07607a51-5384-4d6d-8e6c-98587b825d8f}" /> 
@@ -97,12 +97,12 @@
 </ContentType>
 
     <ListInstance 
-            CustomSchema="newJoinerSchema.xml"
+            CustomSchema="newJoineesSchema.xml"
             FeatureId="00bfea71-de22-43b2-a848-c05709900100"
-            Title="NewJoiners" 
-            Description="NewJoiners Details List created using SharePoint Framework"
+            Title="NewJoinees" 
+            Description="NewJoinees Details List created using SharePoint Framework"
             TemplateType="100"
-            Url="Lists/NewJoiners">
+            Url="Lists/NewJoinees">
      </ListInstance>
 
 </Elements>

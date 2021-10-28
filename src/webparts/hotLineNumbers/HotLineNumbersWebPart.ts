@@ -48,7 +48,7 @@ export default class HotLineNumbersWebPart extends BaseClientSideWebPart<IHotLin
   private async getItems(){
     const items: any[] = await sp.web.lists.getByTitle("HotLine").items.get();
     items.forEach((item: any) =>{
-$("#title").append(`<span>${item['Title']}</span>`);
+$("#title").append(`<span>${item['HotLineTitle']}</span>`);
 $("#hotLineNumber").append(`<span>${item['HotLine']}</span>`);
 
 
