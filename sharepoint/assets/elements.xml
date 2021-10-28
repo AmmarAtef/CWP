@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+<!--HotLine-->
+<Field ID="{c73e9ad6-adce-4af2-bd7f-45de7b67e6c1}"
+            Name="HotLineTitle"
+            DisplayName="Title"
+            Type="Text"
+            Required="TRUE"
+            Group="HotLine Columns" />
+
 <Field ID="{082a0bea-3191-4850-8a89-dd61f5b6324c}"
             Name="HotLine"
             DisplayName="HotLine"
@@ -9,15 +18,16 @@
 
 
 
-
 <ContentType ID="0x01007ddc5d47717240779c4b36ca36425f05" 
             Name="HotLineContentType" 
             Group="HotLine Content Type" 
             Description="This is the Content Type for HotLine">
         <FieldRefs>
+            <FieldRef ID="{c73e9ad6-adce-4af2-bd7f-45de7b67e6c1}" /> 
             <FieldRef ID="{082a0bea-3191-4850-8a89-dd61f5b6324c}" /> 
         </FieldRefs>
 </ContentType> 
+
     <ListInstance 
             CustomSchema="schema.xml"
             FeatureId="00bfea71-de22-43b2-a848-c05709900100"
@@ -26,4 +36,73 @@
             TemplateType="100"
             Url="Lists/HotLine">
      </ListInstance>
+
+
+<!--New Joiners-->
+
+
+
+
+<Field ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}"
+            Name="NewJoinerJobTitle"
+            DisplayName="Job Title"
+            Type="Text"
+            Required="TRUE"
+            Group="New Joiners" />
+
+<Field
+		ID="{07607a51-5384-4d6d-8e6c-98587b825d8f}"
+		Type="Image"
+		DisplayName="Photo"
+		Description="Photo"
+		Group="New Joiners"
+		Required="TRUE"
+		RichTextMode="FullHtml"
+		DisplaceOnUpgrade="TRUE"
+		Name="NewJoinerPhoto"/>
+
+
+<Field ID="{6caedc83-c75b-4573-b1e1-6517f24ca1d9}"
+            Name="NewJoinerDepartment"
+            DisplayName="Department"
+            Type="Text"
+            Required="TRUE"
+            Group="New Joiners" />
+
+<Field ID="{809820ed-bb10-420c-a06a-983958c10664}"
+            Name="NewJoinerPhoneNumber"
+            DisplayName="PhoneNumber"
+            Type="Text"
+            Required="TRUE"
+            Group="New Joiners" />
+<Field ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}"
+            Name="NewJoinerBrief"
+            DisplayName="Brief"
+            Type="Note"
+            Required="TRUE"
+            Group="New Joiners" />
+
+
+<ContentType ID="0x010031c2b801a66a478eb6b0e32a5a948a76" 
+            Name="NewJoinersContentType" 
+            Group="NewJoiners Content Type" 
+            Description="This is the Content Type for NewJoinersContentType">
+        <FieldRefs>
+            <FieldRef ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}" />
+             <FieldRef ID="{07607a51-5384-4d6d-8e6c-98587b825d8f}" /> 
+            <FieldRef ID="{6caedc83-c75b-4573-b1e1-6517f24ca1d9}" /> 
+             <FieldRef ID="{809820ed-bb10-420c-a06a-983958c10664}" /> 
+            <FieldRef ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}" /> 
+        </FieldRefs>
+</ContentType>
+
+    <ListInstance 
+            CustomSchema="newJoinerSchema.xml"
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="NewJoiners" 
+            Description="NewJoiners Details List created using SharePoint Framework"
+            TemplateType="100"
+            Url="Lists/NewJoiners">
+     </ListInstance>
+
 </Elements>

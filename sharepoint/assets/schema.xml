@@ -1,30 +1,92 @@
-<List xmlns:ows="Microsoft SharePoint" Title="Basic List" EnableContentTypes="TRUE" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
-  <MetaData>
-    <ContentTypes>
-      <ContentTypeRef ID="0x01007ddc5d47717240779c4b36ca36425f05" />
-    </ContentTypes>
-    <Fields></Fields>
-    <Views>
-      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
-        <XslLink Default="TRUE">main.xsl</XslLink>
-        <JSLink>clienttemplates.js</JSLink>
-        <RowLimit Paged="TRUE">30</RowLimit>
-        <Toolbar Type="Standard" />
-        <ViewFields>
-          <FieldRef Name="LinkTitle"></FieldRef>
-          <FieldRef Name="HotLine"></FieldRef>
-        </ViewFields>
-        <Query>
-          <OrderBy>
-            <FieldRef Name="ID" />
-          </OrderBy>
-        </Query>
-      </View>
-    </Views>
-    <Forms>
-      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-    </Forms>
- </MetaData>
+<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="HotLine" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/HotLine" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/" EnableContentTypes="TRUE">
+	<MetaData>
+		<ContentTypes>
+
+
+			<ContentType ID="0x01007ddc5d47717240779c4b36ca36425f05" Name="HotLineContentType" Group="HotLine Content Type" Description="This is the Content Type for HotLine" Inherits="TRUE" Version="0">
+		  <FieldRefs>
+            <FieldRef ID="{c73e9ad6-adce-4af2-bd7f-45de7b67e6c1}"  Name="HotLineTitle"
+            DisplayName="Title"
+            Type="Text"
+            Required="TRUE"/> 
+            <FieldRef ID="{082a0bea-3191-4850-8a89-dd61f5b6324c}"  Name="HotLine"
+            DisplayName="HotLine" 
+            Required="TRUE"/> 
+        </FieldRefs>
+			</ContentType>
+			<ContentTypeRef ID="0x01">
+				<Folder TargetName="Item" />
+			</ContentTypeRef>
+			<ContentTypeRef ID="0x0120" />
+		</ContentTypes>
+		<Fields>
+
+	<Field ID="{c73e9ad6-adce-4af2-bd7f-45de7b67e6c1}"
+            Name="HotLineTitle"
+            DisplayName="Title"
+            Type="Text"
+            Required="TRUE"
+            Group="HotLine Columns" />
+<Field ID="{082a0bea-3191-4850-8a89-dd61f5b6324c}"
+            Name="HotLine"
+            DisplayName="HotLine"
+            Type="Text"
+            Required="TRUE"
+            Group="HotLine Columns" />
+
+    </Fields>
+		<Views>
+
+
+			<View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+				<Toolbar Type="Standard" />
+				<XslLink Default="TRUE">main.xsl</XslLink>
+				<RowLimit Paged="TRUE">30</RowLimit>
+				<ViewFields>
+
+					<FieldRef Name="LinkTitleNoMenu"></FieldRef>
+				</ViewFields>
+				<Query>
+					<OrderBy>
+
+						<FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+					</OrderBy>
+				</Query>
+				<ParameterBindings>
+					<ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+					<ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+					<ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+				</ParameterBindings>
+			</View>
+			<View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+				<Toolbar Type="Standard" />
+				<XslLink Default="TRUE">main.xsl</XslLink>
+				<JSLink>clienttemplates.js</JSLink>
+				<RowLimit Paged="TRUE">30</RowLimit>
+				<ViewFields>
+
+					<FieldRef Name="HotLineTitle"></FieldRef>
+					<FieldRef Name="HotLine"></FieldRef>
+
+					
+				</ViewFields>
+				<Query>
+					<OrderBy>
+
+						<FieldRef Name="ID"></FieldRef>
+					</OrderBy>
+				</Query>
+				<ParameterBindings>
+					<ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+					<ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+				</ParameterBindings>
+			</View>
+		</Views>
+		<Forms>
+			<Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+		</Forms>
+	</MetaData>
 </List>

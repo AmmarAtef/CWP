@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="NewJoiners" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/NewJoiners" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/" EnableContentTypes="TRUE">
+	<MetaData>
+		<ContentTypes>
+			<ContentType ID="0x010031c2b801a66a478eb6b0e32a5a948a76" Name="NewJoinersContentType" Group="NewJoiners Content Type" Description="This is the Content Type for NewJoinersContentType" Inherits="TRUE" Version="0">
+		  <FieldRefs>
+            <FieldRef ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}"  Name="NewJoinerJobTitle"
+               DisplayName="Job Title"
+               Required="TRUE"/>
+            <FieldRef ID="{07607a51-5384-4d6d-8e6c-98587b825d8f}" 
+               DisplayName="Photo"
+	             Required="TRUE"
+		           Name="NewJoinerPhoto"/> 
+            <FieldRef ID="{6caedc83-c75b-4573-b1e1-6517f24ca1d9}"
+               Name="NewJoinerDepartment"
+               DisplayName="Department"
+               Required="TRUE" /> 
+            <FieldRef ID="{809820ed-bb10-420c-a06a-983958c10664}" Name="NewJoinerPhoneNumber"
+            DisplayName="PhoneNumber"
+            Required="TRUE" /> 
+            <FieldRef ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}" Name="NewJoinerBrief"
+            DisplayName="Brief"
+            Required="TRUE"/> 
+        </FieldRefs>
+			</ContentType>
+			<ContentTypeRef ID="0x01">
+				<Folder TargetName="Item" />
+			</ContentTypeRef>
+			<ContentTypeRef ID="0x0120" />
+		</ContentTypes>
+		<Fields>
+
+<Field ID="{376fa5e0-222d-4023-a02d-c8b4f4c6a7c3}"
+            Name="NewJoinerJobTitle"
+            DisplayName="Job Title"
+            Type="Text"
+            Required="TRUE"
+            Group="New Joiners" />
+
+<Field
+		ID="{07607a51-5384-4d6d-8e6c-98587b825d8f}"
+		Type="Image"
+		DisplayName="Photo"
+		Description="Photo"
+		Group="New Joiners"
+		Required="TRUE"
+		RichTextMode="FullHtml"
+		DisplaceOnUpgrade="TRUE"
+		Name="NewJoinerPhoto"/>
+
+
+<Field ID="{6caedc83-c75b-4573-b1e1-6517f24ca1d9}"
+            Name="NewJoinerDepartment"
+            DisplayName="Department"
+            Type="Text"
+            Required="TRUE"
+            Group="New Joiners" />
+
+<Field ID="{809820ed-bb10-420c-a06a-983958c10664}"
+            Name="NewJoinerPhoneNumber"
+            DisplayName="PhoneNumber"
+            Type="Text"
+            Required="TRUE"
+            Group="New Joiners" />
+<Field ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}"
+            Name="NewJoinerBrief"
+            DisplayName="Brief"
+            Type="Note"
+            Required="TRUE"
+            Group="New Joiners" />
+    </Fields>
+		<Views>
+
+
+			<View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+				<Toolbar Type="Standard" />
+				<XslLink Default="TRUE">main.xsl</XslLink>
+				<RowLimit Paged="TRUE">30</RowLimit>
+				<ViewFields>
+            <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+				</ViewFields>
+				<Query>
+					<OrderBy>
+
+						<FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+					</OrderBy>
+				</Query>
+				<ParameterBindings>
+					<ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+					<ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+					<ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+				</ParameterBindings>
+			</View>
+			<View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+				<Toolbar Type="Standard" />
+				<XslLink Default="TRUE">main.xsl</XslLink>
+				<JSLink>clienttemplates.js</JSLink>
+				<RowLimit Paged="TRUE">30</RowLimit>
+				<ViewFields>
+
+					<FieldRef Name="NewJoinerName"></FieldRef>
+					<FieldRef Name="NewJoinerJobTitle"></FieldRef>
+					<FieldRef Name="Department"></FieldRef>
+          <FieldRef Name="PhoneNumber"></FieldRef>
+					<FieldRef Name="Brief"></FieldRef>
+
+					
+				</ViewFields>
+				<Query>
+					<OrderBy>
+
+						<FieldRef Name="ID"></FieldRef>
+					</OrderBy>
+				</Query>
+				<ParameterBindings>
+					<ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+					<ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+				</ParameterBindings>
+			</View>
+		</Views>
+		<Forms>
+			<Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+		</Forms>
+	</MetaData>
+</List>
