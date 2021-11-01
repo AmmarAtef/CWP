@@ -105,4 +105,203 @@
             Url="Lists/NewJoinees">
      </ListInstance>
 
+
+     <!--Quick Links-->
+
+<Field ID="{c30647fb-1c3c-4592-a683-9c14c6bc2b4f}"
+            Name="QuickLinksUrl"
+            DisplayName="Url"
+            Type="Text"
+            Required="TRUE"
+            Group="Quick Links" />
+
+<Field
+		ID="{62ace77e-135b-44d3-ae6a-ad3c5c0f0da5}"
+		Type="Image"
+		DisplayName="Image"
+		Description="Image"
+		Group="Quick Links"
+		Required="TRUE"
+		RichTextMode="FullHtml"
+		DisplaceOnUpgrade="TRUE"
+		Name="QuickLinksImage"/>
+
+
+ <ContentType ID="0x0100b5c8f50bc16a443aa4c120c139401a6b"
+            Name="QuickLinksCT"
+            Group="QuickLinksSPFX"
+            Description="Sample content types from web part solution">
+        <FieldRefs>
+            <FieldRef ID="{c30647fb-1c3c-4592-a683-9c14c6bc2b4f}" />
+            <FieldRef ID="{62ace77e-135b-44d3-ae6a-ad3c5c0f0da5}" />
+        </FieldRefs>
+    </ContentType>
+
+<ListInstance
+            CustomSchema="quickLinksSchema.xml"
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="Quick Links"
+            Description="Quick Links"
+            TemplateType="100"
+            Url="Lists/QuickLinks">
+</ListInstance>
+
+
+<!--Banners-->
+
+<ListInstance
+            FeatureId="00bfea71-52d4-45b3-b544-b1c71b620109"
+            Title="Banners"
+            Description="Banners"
+            TemplateType="109"
+            Url="Banners">
+</ListInstance>
+
+<!-- News -->
+
+<Field
+		Type="DateTime"
+		Format="DateTime"
+		DisplayName="Publishing Date"
+		Description="Publishing Date"
+		Required="TRUE"
+		Group="News"
+		ID="{8f36cffa-41ab-45ed-9981-1c230ea6bb4c}"
+		Name="NewsDate">
+	</Field>
+
+<Field
+		ID="{1dba4225-8b49-4867-90fd-cc3ab2805728}"
+		Type="Image"
+		DisplayName="Image"
+		Description="Image"
+		Group="News"
+		Required="TRUE"
+		RichTextMode="FullHtml"
+		DisplaceOnUpgrade="TRUE"
+		Name="NewsImage"/>
+
+<Field ID="{432df252-5099-4552-9b26-b02b06c4fc60}"
+            Name="NewsDescription"
+            DisplayName="Description"
+            Type="Note"
+            Required="TRUE"
+            Group="News" />
+
+ <ContentType ID="0x01007f4b8bdf160446be80e72c121bbe28ce"
+            Name="NewsCT"
+            Group="News"
+            Description="NewsCT content type from web part solution">
+        <FieldRefs>
+            <FieldRef ID="{8f36cffa-41ab-45ed-9981-1c230ea6bb4c}" />
+            <FieldRef ID="{1dba4225-8b49-4867-90fd-cc3ab2805728}" />
+            <FieldRef ID="{432df252-5099-4552-9b26-b02b06c4fc60}" />
+
+        </FieldRefs>
+    </ContentType>
+
+<ListInstance
+            CustomSchema="newsSchema.xml"
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="News"
+            Description="News"
+            TemplateType="100"
+            Url="Lists/News">
+</ListInstance>
+
+<!--PROMOTIONS-->
+<Field
+		ID="{20559f3d-3fbc-4eec-9f26-732bca9ec105}"
+		Type="Image"
+		DisplayName="Image"
+		Description="Image"
+		Group="Promotions"
+		Required="TRUE"
+		RichTextMode="FullHtml"
+		DisplaceOnUpgrade="TRUE"
+		Name="PromotionsImage"/>
+
+<Field ID="{969470b8-d915-4881-8860-bc764c7ebad9}"
+            Name="PromotionsOffer"
+            DisplayName="Offer"
+            Type="Text"
+            Required="TRUE"
+            Group="Promotions" />
+
+<Field ID="{4895a825-b323-4148-9eb6-93f043bb7c36}"
+            Name="PromotionsUrl"
+            DisplayName="Url"
+            Type="URL"
+            Required="TRUE"
+            Group="Promotions" />
+
+<Field ID="{8b55b8d6-cc28-4076-ab2f-b102f5b336dd}"
+            Name="PromotionsDescription"
+            DisplayName="Description"
+            Type="Note"
+            Required="TRUE"
+            Group="Promotions" />
+
+
+ <ContentType ID="0x0100c8d3f14e88474daab1cdba19dac5e764"
+            Name="PromotionsCT"
+            Group="Promotions"
+            Description="PromotionsCT content type from web part solution">
+        <FieldRefs>
+            <FieldRef ID="{20559f3d-3fbc-4eec-9f26-732bca9ec105}" />
+            <FieldRef ID="{969470b8-d915-4881-8860-bc764c7ebad9}" />
+            <FieldRef ID="{4895a825-b323-4148-9eb6-93f043bb7c36}" />
+            <FieldRef ID="{8b55b8d6-cc28-4076-ab2f-b102f5b336dd}" />
+
+
+        </FieldRefs>
+    </ContentType>
+
+<ListInstance
+            CustomSchema="promotionsSchema.xml"
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="Promotions"
+            Description="Promotions"
+            TemplateType="100"
+            Url="Lists/Promotions">
+</ListInstance>
+
+<!--Our Performance-->
+<Field ID="{3b5dba64-aa8e-42ef-a2de-1d64f3b5d808}"
+            Name="Performance"
+            DisplayName="Performance"
+            Type="Number"
+            Required="TRUE"
+            Group="Performance" />
+
+<Field
+		ID="{823218d4-1626-4e0b-b98c-94f607b33e01}"
+		Type="Image"
+		DisplayName="Image"
+		Description="Image"
+		Group="Performance"
+		Required="TRUE"
+		RichTextMode="FullHtml"
+		DisplaceOnUpgrade="TRUE"
+		Name="PerformanceImage"/>
+
+<ContentType ID="0x010036e042dccd4b4d84a9404e6987af5b83" 
+            Name="PerformanceCT" 
+            Group="Performance Content Type" 
+            Description="Performance Content Type">
+        <FieldRefs>
+            <FieldRef ID="{3b5dba64-aa8e-42ef-a2de-1d64f3b5d808}" /> 
+            <FieldRef ID="{823218d4-1626-4e0b-b98c-94f607b33e01}" /> 
+        </FieldRefs>
+</ContentType> 
+
+    <ListInstance 
+            CustomSchema="performanceSchema.xml"
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="Performance" 
+            Description="Performance Details List created using SharePoint Framework"
+            TemplateType="100"
+            Url="Lists/Performance">
+     </ListInstance>
+
 </Elements>

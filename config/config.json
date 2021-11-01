@@ -41,6 +41,38 @@
           "manifest": "./src/webparts/newJoinees/NewJoineesWebPart.manifest.json"
         }
       ]
+    },
+    "news-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/news/NewsWebPart.js",
+          "manifest": "./src/webparts/news/NewsWebPart.manifest.json"
+        }
+      ]
+    },
+    "promotions-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/promotions/PromotionsWebPart.js",
+          "manifest": "./src/webparts/promotions/PromotionsWebPart.manifest.json"
+        }
+      ]
+    },
+    "banner-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/banner/BannerWebPart.js",
+          "manifest": "./src/webparts/banner/BannerWebPart.manifest.json"
+        }
+      ]
+    },
+    "our-performance-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/ourPerformance/OurPerformanceWebPart.js",
+          "manifest": "./src/webparts/ourPerformance/OurPerformanceWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -49,6 +81,10 @@
     "CalendarWebPartStrings": "lib/webparts/calendar/loc/{locale}.js",
     "QuickLinksWebPartStrings": "lib/webparts/quickLinks/loc/{locale}.js",
     "HotLineNumbersWebPartStrings": "lib/webparts/hotLineNumbers/loc/{locale}.js",
-    "NewJoineesWebPartStrings": "lib/webparts/newJoinees/loc/{locale}.js"
+    "NewJoineesWebPartStrings": "lib/webparts/newJoinees/loc/{locale}.js",
+    "NewsWebPartStrings": "lib/webparts/news/loc/{locale}.js",
+    "PromotionsWebPartStrings": "lib/webparts/promotions/loc/{locale}.js",
+    "BannerWebPartStrings": "lib/webparts/banner/loc/{locale}.js",
+    "OurPerformanceWebPartStrings": "lib/webparts/ourPerformance/loc/{locale}.js"
   }
 }

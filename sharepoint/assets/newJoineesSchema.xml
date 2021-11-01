@@ -62,6 +62,7 @@
             Type="Text"
             Required="TRUE"
             Group="New Joiners" />
+
 <Field ID="{c47145d2-857e-4cac-bcff-4ce1519f9950}"
             Name="NewJoineeBrief"
             DisplayName="Brief"
@@ -97,14 +98,11 @@
 				<JSLink>clienttemplates.js</JSLink>
 				<RowLimit Paged="TRUE">30</RowLimit>
 				<ViewFields>
-
-					<FieldRef Name="NewJoineeName"></FieldRef>
+				<FieldRef Name=""></FieldRef>
 					<FieldRef Name="NewJoineeJobTitle"></FieldRef>
 					<FieldRef Name="Department"></FieldRef>
                     <FieldRef Name="PhoneNumber"></FieldRef>
 					<FieldRef Name="Brief"></FieldRef>
-
-					
 				</ViewFields>
 				<Query>
 					<OrderBy>

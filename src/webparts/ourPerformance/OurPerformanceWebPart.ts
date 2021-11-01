@@ -5,34 +5,34 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { escape } from '@microsoft/sp-lodash-subset';
-import { SPComponentLoader } from "@microsoft/sp-loader";
-import styles from './CalendarWebPart.module.scss';
-import * as strings from 'CalendarWebPartStrings';
-import 'jqueryui';
-export interface ICalendarWebPartProps {
+
+import styles from './OurPerformanceWebPart.module.scss';
+import * as strings from 'OurPerformanceWebPartStrings';
+
+export interface IOurPerformanceWebPartProps {
   description: string;
 }
 
-export default class CalendarWebPart extends BaseClientSideWebPart<ICalendarWebPartProps> {
+export default class OurPerformanceWebPart extends BaseClientSideWebPart<IOurPerformanceWebPartProps> {
 
-  constructor(){
-    super();
-    SPComponentLoader.loadCss(
-      "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
-      );
-  }
   public render(): void {
-
     this.domElement.innerHTML = `
-    <div>
-      <div id="datepicker"></div>
-    </div>`;
-    this.BindDatePicker();
+      <div class="${ styles.ourPerformance }">
+        <div class="${ styles.container }">
+          <div class="${ styles.row }">
+            <div class="${ styles.column }">
+              <span class="${ styles.title }">Welcome to SharePoint!</span>
+              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
+              <p class="${ styles.description }">${escape(this.properties.description)}</p>
+              <a href="https://aka.ms/spfx" class="${ styles.button }">
+                <span class="${ styles.label }">Learn more</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>`;
   }
-  public BindDatePicker()
-  {
-    $("#datepicker").datepicker();
-  }
+
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }

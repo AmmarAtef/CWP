@@ -18,24 +18,49 @@ export interface IWeatherWebPartProps {
 
 export default class WeatherWebPart extends BaseClientSideWebPart<IWeatherWebPartProps> {
 
-  constructor(){
+  constructor() {
     super();
+    SPComponentLoader.loadScript(
+      "/IntranetDemo/Assets/js/libs/jquery.min.js"
+    );
     SPComponentLoader.loadCss(
+      
       "/IntranetDemo/Assets/css/main.css"
-      );
-      SPComponentLoader.loadCss(
-        "/IntranetDemo/Assets/css/lightslider.css"
-        );
-        SPComponentLoader.loadCss(
-          "/IntranetDemo/Assets/css/bootstrap.min.css"
-          );
-          SPComponentLoader.loadCss(
-            "/IntranetDemo/Assets/css/all.css"
-            );
+    );
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/lightslider.css"
+    );
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/bootstrap.min.css"
+    );
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/all.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/jquery-ui.css"
+    );
+
+    
+
+    SPComponentLoader.loadScript(
+      "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"
+    );
+
+  
+    SPComponentLoader.loadScript(
+      "/IntranetDemo/Assets/js/libs/lightslider.js"
+    );
+    SPComponentLoader.loadScript(
+      "/IntranetDemo/Assets/js/main.js"
+    );
+
+  
+
   }
 
   public render(): void {
-    
+
     this.domElement.innerHTML = `
     <div class="weather mb-3">
     <img alt="" src="/IntranetDemo/Assets/Img/weatherIcon.png" />
@@ -44,22 +69,22 @@ export default class WeatherWebPart extends BaseClientSideWebPart<IWeatherWebPar
     <i class="fas fa-caret-right text-primary"></i>
   </div>`;
 
-      this.getData();
+    this.getData();
   }
 
 
-private getData(){
-  const url = new URL('https://api.weatherapi.com/v1/current.json?key=300ef357d4164ac98a390615211910&q=Doha&aqi=no');
-    (async () =>{
-      const response = await fetch( url.toString());
+  private getData() {
+    const url = new URL('https://api.weatherapi.com/v1/current.json?key=300ef357d4164ac98a390615211910&q=Doha&aqi=no');
+    (async () => {
+      const response = await fetch(url.toString());
       const data = await response.json();
-       $("#degree").text(data.current.feelslike_c +" °C ");
-       $("#place").text(data.current.condition.text+", "+data.location.name);
+      $("#degree").text(data.current.feelslike_c + " °C ");
+      $("#place").text(data.current.condition.text + ", " + data.location.name);
     })();
-}
+  }
 
   protected get dataVersion(): Version {
-   
+
     return Version.parse('1.0');
   }
 

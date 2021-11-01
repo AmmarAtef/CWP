@@ -21,7 +21,7 @@ export interface IHotLineNumbersWebPartProps {
 
 export default class HotLineNumbersWebPart extends BaseClientSideWebPart<IHotLineNumbersWebPartProps> {
 
- 
+
   public render(): void {
     this.domElement.innerHTML = `
     <section class="hotline-numbers p-3 pt-0">

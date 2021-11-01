@@ -3,7 +3,7 @@
   "solution": {
     "name": "mannai-common-web-parts-client-side",
     "id": "89972152-6ab2-4705-b222-109cae82c46f",
-    "version": "1.0.2.0",
+    "version": "1.0.2.2",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [
@@ -11,14 +11,18 @@
         "title": "sp-fx-Common-web-parts",
         "description": "sp-fx-Common-web-parts",
         "id": "09303037-6ed9-4568-95bf-f37a55c57da9",
-        "version": "1.0.2.0",
+        "version": "1.0.2.2",
         "assets": {
           "elementManifests": [
             "elements.xml"
           ],
           "elementFiles": [
             "schema.xml",
-            "newJoineesSchema.xml"
+            "newJoineesSchema.xml",
+            "quickLinksSchema.xml",
+            "newsSchema.xml",
+            "performanceSchema.xml",
+            "promotionsSchema.xml"
           ]
         }
       }
