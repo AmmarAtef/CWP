@@ -6,23 +6,15 @@ import {
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { escape } from '@microsoft/sp-lodash-subset';
 
-import styles from './QuickLinksWebPart.module.scss';
-import * as strings from 'QuickLinksWebPartStrings';
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import { _Webs } from '@pnp/sp/webs/types';
-import { IContextInfo, _Site } from '@pnp/sp/sites/types';
-import { getRandomString, setup as pnpSetup } from "@pnp/common";
+import styles from './PollsWebPart.module.scss';
+import * as strings from 'PollsWebPartStrings';
 import { SPComponentLoader } from "@microsoft/sp-loader";
 
-
-export interface IQuickLinksWebPartProps {
+export interface IPollsWebPartProps {
   description: string;
 }
 
-export default class QuickLinksWebPart extends BaseClientSideWebPart<IQuickLinksWebPartProps> {
+export default class PollsWebPart extends BaseClientSideWebPart<IPollsWebPartProps> {
 
   constructor() {
     super();
@@ -70,39 +62,37 @@ export default class QuickLinksWebPart extends BaseClientSideWebPart<IQuickLinks
   }
 
 
-  public async onInit() {
-    const _ = await super.onInit();
-    pnpSetup({
-      spfxContext: this.context
-    });
-  }
   public render(): void {
     this.domElement.innerHTML = `
-    <section class="departments large-slider pl-20 mt-5">
-    <div id="depts" class="content-slider" items-per-page="6">
-   
-    </div>
-  </section>`;
-    this.getLinks();
-  }
-
-  private async getLinks() {
-
-    const items: any[] = await sp.web.lists.getByTitle("Quick Links").items.get();
-    for (var i = 0; i < items.length; i++) {
-      let itemElem = await sp.web.lists.getByTitle("Quick Links").items.getById(items[i].Id).fieldValuesAsText.get();
-      
-      
-      $("#depts").append(`<div class="item text-center">
-      <div class="dept-photo pb-4 p-4">
-        ${itemElem['QuickLinksImage']}
-      </div>
-      <p class="mb-0 mt-2 text-light bold">${itemElem['Title']}</p>
-    </div>`);
-    
-
-
-    }
+    <div class="col-lg-9  col-md-12 col-sm-12">
+    <!-- start of polls section -->
+    <section class="pl-30 polls">
+      <div class="main-heading">Today's Poll</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod?</p>
+      <!-- start of polls form -->
+      <form>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="rollRB" id="rollRB_option1">
+          <label class="form-check-label text-light" for="rollRB_option1">
+            Lorem ipsum dolor sit
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="rollRB" id="rollRB_option2">
+          <label class="form-check-label text-light" for="rollRB_option2">
+            Lorem ipsum 
+          </label>
+        </div>
+        <div class="actions mt-3">
+          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" class="btn btn-outline-primary">View Results</button>
+        </div>
+        <button class="btn btn-link p-0 mt-1">
+          <small>+  View Other Polls</small>
+        </button>
+      </form>
+    </section>
+  </div>`;
   }
 
   protected get dataVersion(): Version {

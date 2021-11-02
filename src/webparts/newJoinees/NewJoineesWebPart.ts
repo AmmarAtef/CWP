@@ -13,7 +13,6 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 import { getRandomString, setup as pnpSetup } from "@pnp/common";
-import * as $ from 'jquery';
 
 import { SPComponentLoader } from "@microsoft/sp-loader";
 
@@ -23,6 +22,50 @@ export interface INewJoineesWebPartProps {
 
 export default class NewJoineesWebPart extends BaseClientSideWebPart<INewJoineesWebPartProps> {
 
+  constructor() {
+    super();
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/bootstrap.min.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/all.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/lightslider.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/jquery-ui.css"
+    );
+
+    SPComponentLoader.loadCss(
+
+      "/IntranetDemo/Assets/css/main.css"
+    );
+
+
+    SPComponentLoader.loadScript(
+      "/IntranetDemo/Assets/js/libs/jquery.min.js"
+    ).then(() => {
+      SPComponentLoader.loadScript(
+        "/IntranetDemo/Assets/js/libs/lightslider.js"
+      )
+
+      SPComponentLoader.loadScript(
+        "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"
+      ).then(() => {
+        SPComponentLoader.loadScript(
+          "/IntranetDemo/Assets/js/main.js"
+        );
+        
+      });
+
+     
+    });
+
+  }
   public async onInit() {
     const _ = await super.onInit();
     // other init code may be present
@@ -38,50 +81,26 @@ export default class NewJoineesWebPart extends BaseClientSideWebPart<INewJoinees
     for(var i=0;i<items.length;i++){
       let itemElem =  await sp.web.lists.getByTitle("newJoinees").items.getById(items[i].Id).fieldValuesAsText.get();
       console.log(itemElem);
-      $("#divjoinees").append(`<div class="item d-flex align-items-center lslide active" style="width: 232px; margin-right: 10px;">
+      $("#divjoinees").append(`<div class="item  d-flex align-items-center">
       ${itemElem["NewJoineePhoto"]}
       <div>
         <p class="text-primary bold mb-0">${itemElem["NewJoinerName"]}</p>
         <p class="text-light mb-0">${itemElem["NewJoineeDepartment"]}</p>
       </div>
     </div>`);
+
+    
     }   
   }
 
 
   public render(): void {
     this.getItems();
-    this.domElement.innerHTML = `
-    <div class="col-lg-3  col-md-12 col-sm-12 new-joinees">
+    this.domElement.innerHTML = `  <div class="col-lg-3  col-md-12 col-sm-12 new-joinees">
     <div class="main-heading">New Joinees</div>
-    <div class="lSSlideOuter "><div  id="divjoinees" class="lSSlideWrapper usingCss" style="transition-duration: 400ms; transition-timing-function: ease;"><div class="content-slider mt-3 lightSlider lsGrab lSSlide" items-per-page="1" style="width: 968px; transform: translate3d(-242px, 0px, 0px); height: 91px; padding-bottom: 0%; visibility: visible;"><div class="item d-flex align-items-center clone left" style="width: 232px; margin-right: 10px;">
-        <img alt="" src="assets/img/dummy/profilePhoto.jpg">
-        <div>
-          <p class="text-primary bold mb-0">John Douglas</p>
-          <p class="text-light mb-0">Marketing Specialist</p>
-        </div>
-      </div>
-      <div class="item d-flex align-items-center lslide active" style="width: 232px; margin-right: 10px;">
-        <img alt="" src="assets/img/dummy/profilePhoto.jpg">
-        <div>
-          <p class="text-primary bold mb-0">John Douglas</p>
-          <p class="text-light mb-0">Marketing Specialist</p>
-        </div>
-      </div>
-      <div class="item d-flex align-items-center lslide" style="width: 232px; margin-right: 10px;">
-        <img alt="" src="assets/img/dummy/profilePhoto.jpg">
-        <div>
-          <p class="text-primary bold mb-0">John Douglas</p>
-          <p class="text-light mb-0">Marketing Specialist</p>
-        </div>
-      </div>
-    <div class="item d-flex align-items-center clone right" style="width: 232px; margin-right: 10px;">
-        <img alt="" src="assets/img/dummy/profilePhoto.jpg">
-        <div>
-          <p class="text-primary bold mb-0">John Douglas</p>
-          <p class="text-light mb-0">Marketing Specialist</p>
-        </div>
-      </div></div><div class="lSAction" style="display: block;"><a class="lSPrev"><i class="fas fa-chevron-left"></i></a><a class="lSNext"><i class="fas fa-chevron-right"></i></a></div></div><ul class="lSPager lSpg" style="margin-top: 5px;"><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li></ul></div>
+    <div id="divjoinees" class="content-slider mt-3" items-per-page="1">
+      
+    </div>
   </div>`;
   }
 

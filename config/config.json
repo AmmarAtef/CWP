@@ -73,9 +73,44 @@
           "manifest": "./src/webparts/ourPerformance/OurPerformanceWebPart.manifest.json"
         }
       ]
+    },
+    "profile-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/profile/ProfileWebPart.js",
+          "manifest": "./src/webparts/profile/ProfileWebPart.manifest.json"
+        }
+      ]
+    },
+    "nav-menu-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/navMenu/NavMenuWebPart.js",
+          "manifest": "./src/webparts/navMenu/NavMenuWebPart.manifest.json"
+        }
+      ]
+    },
+    "instgram-feeds-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/instgramFeeds/InstgramFeedsWebPart.js",
+          "manifest": "./src/webparts/instgramFeeds/InstgramFeedsWebPart.manifest.json"
+        }
+      ]
+    },
+    "polls-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/polls/PollsWebPart.js",
+          "manifest": "./src/webparts/polls/PollsWebPart.manifest.json"
+        }
+      ]
     }
   },
-  "externals": {},
+  "externals": {
+    "jquery": "node_modules/jquery/dist/jquery.min.js",
+    "jqueryui": "node_modules/jqueryui/jquery-ui.min.js"
+  },
   "localizedResources": {
     "WeatherWebPartStrings": "lib/webparts/weather/loc/{locale}.js",
     "CalendarWebPartStrings": "lib/webparts/calendar/loc/{locale}.js",
@@ -85,6 +120,10 @@
     "NewsWebPartStrings": "lib/webparts/news/loc/{locale}.js",
     "PromotionsWebPartStrings": "lib/webparts/promotions/loc/{locale}.js",
     "BannerWebPartStrings": "lib/webparts/banner/loc/{locale}.js",
-    "OurPerformanceWebPartStrings": "lib/webparts/ourPerformance/loc/{locale}.js"
+    "OurPerformanceWebPartStrings": "lib/webparts/ourPerformance/loc/{locale}.js",
+    "ProfileWebPartStrings": "lib/webparts/profile/loc/{locale}.js",
+    "NavMenuWebPartStrings": "lib/webparts/navMenu/loc/{locale}.js",
+    "InstgramFeedsWebPartStrings": "lib/webparts/instgramFeeds/loc/{locale}.js",
+    "PollsWebPartStrings": "lib/webparts/polls/loc/{locale}.js"
   }
 }

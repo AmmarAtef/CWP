@@ -6,24 +6,15 @@ import {
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { escape } from '@microsoft/sp-lodash-subset';
 
-import styles from './QuickLinksWebPart.module.scss';
-import * as strings from 'QuickLinksWebPartStrings';
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import { _Webs } from '@pnp/sp/webs/types';
-import { IContextInfo, _Site } from '@pnp/sp/sites/types';
-import { getRandomString, setup as pnpSetup } from "@pnp/common";
+import styles from './InstgramFeedsWebPart.module.scss';
+import * as strings from 'InstgramFeedsWebPartStrings';
 import { SPComponentLoader } from "@microsoft/sp-loader";
 
-
-export interface IQuickLinksWebPartProps {
+export interface IInstgramFeedsWebPartProps {
   description: string;
 }
 
-export default class QuickLinksWebPart extends BaseClientSideWebPart<IQuickLinksWebPartProps> {
-
+export default class InstgramFeedsWebPart extends BaseClientSideWebPart<IInstgramFeedsWebPartProps> {
   constructor() {
     super();
     SPComponentLoader.loadCss(
@@ -61,48 +52,29 @@ export default class QuickLinksWebPart extends BaseClientSideWebPart<IQuickLinks
         SPComponentLoader.loadScript(
           "/IntranetDemo/Assets/js/main.js"
         );
-
+        
       });
 
-
+     
     });
 
-  }
-
-
-  public async onInit() {
-    const _ = await super.onInit();
-    pnpSetup({
-      spfxContext: this.context
-    });
   }
   public render(): void {
     this.domElement.innerHTML = `
-    <section class="departments large-slider pl-20 mt-5">
-    <div id="depts" class="content-slider" items-per-page="6">
-   
-    </div>
-  </section>`;
-    this.getLinks();
-  }
-
-  private async getLinks() {
-
-    const items: any[] = await sp.web.lists.getByTitle("Quick Links").items.get();
-    for (var i = 0; i < items.length; i++) {
-      let itemElem = await sp.web.lists.getByTitle("Quick Links").items.getById(items[i].Id).fieldValuesAsText.get();
-      
-      
-      $("#depts").append(`<div class="item text-center">
-      <div class="dept-photo pb-4 p-4">
-        ${itemElem['QuickLinksImage']}
-      </div>
-      <p class="mb-0 mt-2 text-light bold">${itemElem['Title']}</p>
-    </div>`);
-    
-
-
-    }
+    <section class="instgram-feeds mt-4">
+                  <div class="main-heading">Instagram Feeds</div>
+                  <div class="position-relative">
+                    <i class="fab fa-instagram-square instgram-icon position-absolute"></i>
+                    <div class="feeds-container outline-container pb-0">
+                      <div class="feed-item mb-2 d-flex">
+                        <img class="w-100" alt="instgram-feeds" src="/IntranetDemo/assets/img/dummy/insgram-feeds.jpg" />
+                      </div>
+                      <div class="feed-item mb-2 d-flex">
+                        <img class="w-100" alt="instgram-feeds" src="/IntranetDemo/assets/img/dummy/insgram-feeds.jpg" />
+                      </div>
+                    </div>
+                  </div>
+                </section>`;
   }
 
   protected get dataVersion(): Version {

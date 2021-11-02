@@ -26,19 +26,19 @@ export default class NewsWebPart extends BaseClientSideWebPart<INewsWebPartProps
   constructor() {
     super();
     SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/bootstrap.min.css"
+      "/IntranetDemo/Assets/css/libs/bootstrap.min.css"
     );
 
     SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/all.css"
+      "/IntranetDemo/Assets/css/libs/all.css"
     );
 
     SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/lightslider.css"
+      "/IntranetDemo/Assets/css/libs/lightslider.css"
     );
 
     SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/jquery-ui.css"
+      "/IntranetDemo/Assets/css/libs/jquery-ui.css"
     );
 
     SPComponentLoader.loadCss(
@@ -77,7 +77,7 @@ export default class NewsWebPart extends BaseClientSideWebPart<INewsWebPartProps
 
 
   public render(): void {
-    this.domElement.innerHTML = `<section class="recent-updates pl-20 mt-5">
+    this.domElement.innerHTML = ` <section class="recent-updates pl-20 mt-5">
     <div class="d-flex justify-content-between align-items-center">
       <div>
         <div class="main-heading">Recent Updates</div>
@@ -86,10 +86,9 @@ export default class NewsWebPart extends BaseClientSideWebPart<INewsWebPartProps
       <button class="btn btn-primary">Read all updates</button>
     </div>
     <div class="updates-container large-slider p-3 mt-3">
-      <div class="lSSlideOuter ">
-      <div class="lSSlideWrapper usingCss" style="transition-duration: 400ms; transition-timing-function: ease;">
-      <div id="news" class="content-slider lightSlider lSSlide lsGrab" items-per-page="4" style="width: 2047.5px; transform: translate3d(-630px, 0px, 0px); height: 301px; padding-bottom: 0%; visibility: visible;">
-      </div><div class="lSAction"><a class="lSPrev"><i class="fas fa-chevron-left"></i></a><a class="lSNext"><i class="fas fa-chevron-right"></i></a></div></div><ul class="lSPager lSpg" style="margin-top: 5px; transform: translate3d(0px, 0px, 0px);"><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li></ul></div>
+      <div id="news" class="content-slider" items-per-page="4">
+        
+      </div>
     </div>
   </section>`;
 
@@ -102,21 +101,8 @@ export default class NewsWebPart extends BaseClientSideWebPart<INewsWebPartProps
     const items: any[] = await sp.web.lists.getByTitle("News").items.get();
     for (var i = 0; i < items.length; i++) {
       let itemElem = await sp.web.lists.getByTitle("News").items.getById(items[i].Id).fieldValuesAsText.get();
-      console.log(itemElem);
-      let classes: string = "";
-      if(i<2){
-        classes= "clone left";
-      }
-      else if (i > 2 && i < 5) {
-        classes = "lslide";
-      }
-      else if (i == 3) {
-        classes = "lslide active";
-      }
-      else {
-        classes = "clone right";
-      }
-      $("#news").append(`<div class="item clone ${classes}" style="width: 147.5px; margin-right: 10px;">
+    
+      $("#news").append(`<div class="item">
       <div class="update-cover">
       ${itemElem['NewsImage']}
       </div>

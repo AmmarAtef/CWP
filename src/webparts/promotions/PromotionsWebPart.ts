@@ -27,19 +27,19 @@ export default class PromotionsWebPart extends BaseClientSideWebPart<IPromotions
   constructor() {
     super();
     SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/bootstrap.min.css"
+      "/IntranetDemo/Assets/css/libs/bootstrap.min.css"
     );
 
     SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/all.css"
+      "/IntranetDemo/Assets/css/libs/all.css"
     );
 
     SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/lightslider.css"
+      "/IntranetDemo/Assets/css/libs/lightslider.css"
     );
 
     SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/jquery-ui.css"
+      "/IntranetDemo/Assets/css/libs/jquery-ui.css"
     );
 
     SPComponentLoader.loadCss(
@@ -73,16 +73,14 @@ export default class PromotionsWebPart extends BaseClientSideWebPart<IPromotions
   public render(): void {
     this.domElement.innerHTML = `
     <section class="promotions outline-container mt-4 text-center">
-    <div class="main-heading mb-3">Promotions</div>
-    <div class="lSSlideOuter ">
-    <div class="lSSlideWrapper usingCss" style="transition-duration: 400ms; transition-timing-function: ease;">
-    <div id="promotions" class="content-slider lightSlider lsGrab lSSlide" items-per-page="1" style="width: 1288px; transform: translate3d(-322px, 0px, 0px); height: 178px; padding-bottom: 0%; visibility: visible;">
-    
-    </div><div class="lSAction"><a class="lSPrev"><i class="fas fa-chevron-left"></i></a><a class="lSNext"><i class="fas fa-chevron-right"></i></a></div></div><ul class="lSPager lSpg" style="margin-top: 5px; transform: translate3d(0px, 0px, 0px);"><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li></ul></div>
-    <div>
-      <button class="btn btn-link mt-3">+ View all promotions</button>
-    </div>
-  </section>`;
+                  <div class="main-heading mb-3">Promotions</div>
+                  <div id="promotions" class="content-slider" items-per-page="1">
+                    
+                  </div>
+                  <div>
+                    <button class="btn btn-link mt-3">+ View all promotions</button>
+                  </div>
+                </section>`;
 
     this.getPromotions();
 
@@ -97,23 +95,14 @@ export default class PromotionsWebPart extends BaseClientSideWebPart<IPromotions
   }
 
   private async getPromotions() {
+
     const items: any[] = await sp.web.lists.getByTitle("Promotions").items.get();
     for (var i = 0; i < items.length; i++) {
       let itemElem = await sp.web.lists.getByTitle("Promotions").items.getById(items[i].Id).fieldValuesAsText.get();
-      console.log(itemElem);
-      let classCss: string = "clone right"
-      if (i == 0) {
-        classCss = "clone left";
-      }
-      else if (i == 1) {
-        classCss = "lslide active";
-      }
-      else if (i == 2) {
-        classCss = "lslide";
-      }
-    
+
+
       $("#promotions").append(
-        `<div class="${classCss}" style="width: 312px; margin-right: 10px;">
+        `<div >
         <div class="outline-container d-inline-block">
           ${itemElem['PromotionsImage']}
         </div>
@@ -122,6 +111,9 @@ export default class PromotionsWebPart extends BaseClientSideWebPart<IPromotions
         <button class="btn btn-link bold p-0">Read more</button>
       </div>`
       );
+
+
+
     }
 
   }

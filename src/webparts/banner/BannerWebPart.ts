@@ -91,16 +91,16 @@ export default class BannerWebPart extends BaseClientSideWebPart<IBannerWebPartP
   public render(): void {
     this.domElement.innerHTML = `
     <section class="main-cover position-relative">
-    <img class="cover-photo w-100 h-100" alt="Cover " id="imgBanner" src="">
-    <div class="cover-overlay position-absolute w-100 h-100 d-flex align-items-center">
-      <div class="cover-quotes col-lg-4 col-md-7 col-sm-11 position-relative">
-        <i class="fas fa-quote-right quotes-icon position-absolute"></i>
-        <p>Many of life’s failures are people who did not realize how close they were to success when they gave up.</p>
-        <button class="btn btn-link p-0">Thomas A. Edison</button>
-        <i class="fas fa-quote-right quotes-icon position-absolute"></i>
-      </div>
-    </div>
-  </section>`;
+              <img class="cover-photo w-100 h-100" alt="Cover" id="imgBanner" src="/IntranetDemo/assets/img/dummy/mainCover.jpg" />
+              <div class="cover-overlay position-absolute w-100 h-100 d-flex align-items-center">
+                <div class="cover-quotes col-lg-4 col-md-7 col-sm-11 position-relative">
+                  <i class="fas fa-quote-right quotes-icon position-absolute"></i>
+                  <p>Many of life’s failures are people who did not realize how close they were to success when they gave up.</p>
+                  <button class="btn btn-link p-0">Thomas A. Edison</button>
+                  <i class="fas fa-quote-right quotes-icon position-absolute"></i>
+                </div>
+              </div>
+            </section>`;
     this.getBanner();
   }
 

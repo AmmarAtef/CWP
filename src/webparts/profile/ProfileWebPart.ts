@@ -5,25 +5,15 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { escape } from '@microsoft/sp-lodash-subset';
-
-import styles from './QuickLinksWebPart.module.scss';
-import * as strings from 'QuickLinksWebPartStrings';
-import { sp } from "@pnp/sp";
-import "@pnp/sp/webs";
-import "@pnp/sp/lists";
-import "@pnp/sp/items";
-import { _Webs } from '@pnp/sp/webs/types';
-import { IContextInfo, _Site } from '@pnp/sp/sites/types';
-import { getRandomString, setup as pnpSetup } from "@pnp/common";
 import { SPComponentLoader } from "@microsoft/sp-loader";
+import styles from './ProfileWebPart.module.scss';
+import * as strings from 'ProfileWebPartStrings';
 
-
-export interface IQuickLinksWebPartProps {
+export interface IProfileWebPartProps {
   description: string;
 }
 
-export default class QuickLinksWebPart extends BaseClientSideWebPart<IQuickLinksWebPartProps> {
-
+export default class ProfileWebPart extends BaseClientSideWebPart<IProfileWebPartProps> {
   constructor() {
     super();
     SPComponentLoader.loadCss(
@@ -69,40 +59,14 @@ export default class QuickLinksWebPart extends BaseClientSideWebPart<IQuickLinks
 
   }
 
-
-  public async onInit() {
-    const _ = await super.onInit();
-    pnpSetup({
-      spfxContext: this.context
-    });
-  }
   public render(): void {
     this.domElement.innerHTML = `
-    <section class="departments large-slider pl-20 mt-5">
-    <div id="depts" class="content-slider" items-per-page="6">
-   
-    </div>
+    <section class="profile-summary">
+    <img alt="Bushra Khan" src="/IntranetDemo/assets/img/dummy/profilePhoto.jpg">
+    <h1 class="profile-name mb-1 text-capitalize bold mt-3">bushra khan</h1>
+    <h2 class="profile-role text-light mb-0">UI / UX Designer</h2>
+    <button class="btn btn-outline-primary pt-1 pb-1 mt-3">Dashboard</button>
   </section>`;
-    this.getLinks();
-  }
-
-  private async getLinks() {
-
-    const items: any[] = await sp.web.lists.getByTitle("Quick Links").items.get();
-    for (var i = 0; i < items.length; i++) {
-      let itemElem = await sp.web.lists.getByTitle("Quick Links").items.getById(items[i].Id).fieldValuesAsText.get();
-      
-      
-      $("#depts").append(`<div class="item text-center">
-      <div class="dept-photo pb-4 p-4">
-        ${itemElem['QuickLinksImage']}
-      </div>
-      <p class="mb-0 mt-2 text-light bold">${itemElem['Title']}</p>
-    </div>`);
-    
-
-
-    }
   }
 
   protected get dataVersion(): Version {

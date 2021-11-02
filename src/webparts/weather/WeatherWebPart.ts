@@ -8,7 +8,7 @@ import { escape } from '@microsoft/sp-lodash-subset';
 import { SPComponentLoader } from "@microsoft/sp-loader";
 import styles from './WeatherWebPart.module.scss';
 import * as strings from 'WeatherWebPartStrings';
-import * as $ from 'jquery';
+
 
 
 
@@ -20,42 +20,46 @@ export default class WeatherWebPart extends BaseClientSideWebPart<IWeatherWebPar
 
   constructor() {
     super();
-    SPComponentLoader.loadScript(
-      "/IntranetDemo/Assets/js/libs/jquery.min.js"
-    );
     SPComponentLoader.loadCss(
-      
+      "/IntranetDemo/Assets/css/libs/bootstrap.min.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/all.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/lightslider.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/jquery-ui.css"
+    );
+
+    SPComponentLoader.loadCss(
+
       "/IntranetDemo/Assets/css/main.css"
     );
-    SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/lightslider.css"
-    );
-    SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/bootstrap.min.css"
-    );
-    SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/all.css"
-    );
 
-    SPComponentLoader.loadCss(
-      "/IntranetDemo/Assets/css/jquery-ui.css"
-    );
-
-    
 
     SPComponentLoader.loadScript(
-      "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"
-    );
+      "/IntranetDemo/Assets/js/libs/jquery.min.js"
+    ).then(() => {
+      SPComponentLoader.loadScript(
+        "/IntranetDemo/Assets/js/libs/lightslider.js"
+      )
 
-  
-    SPComponentLoader.loadScript(
-      "/IntranetDemo/Assets/js/libs/lightslider.js"
-    );
-    SPComponentLoader.loadScript(
-      "/IntranetDemo/Assets/js/main.js"
-    );
+      SPComponentLoader.loadScript(
+        "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"
+      ).then(() => {
+        SPComponentLoader.loadScript(
+          "/IntranetDemo/Assets/js/main.js"
+        );
 
-  
+      });
+
+
+    });
 
   }
 

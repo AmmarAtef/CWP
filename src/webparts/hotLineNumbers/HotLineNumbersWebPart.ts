@@ -13,7 +13,7 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 import { getRandomString, setup as pnpSetup } from "@pnp/common";
-import * as $ from 'jquery';
+
 import { SPComponentLoader } from "@microsoft/sp-loader";
 export interface IHotLineNumbersWebPartProps {
   description: string;
@@ -21,19 +21,66 @@ export interface IHotLineNumbersWebPartProps {
 
 export default class HotLineNumbersWebPart extends BaseClientSideWebPart<IHotLineNumbersWebPartProps> {
 
+  constructor() {
+    super();
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/bootstrap.min.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/all.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/lightslider.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/jquery-ui.css"
+    );
+
+    SPComponentLoader.loadCss(
+
+      "/IntranetDemo/Assets/css/main.css"
+    );
+
+
+    SPComponentLoader.loadScript(
+      "/IntranetDemo/Assets/js/libs/jquery.min.js"
+    ).then(() => {
+      SPComponentLoader.loadScript(
+        "/IntranetDemo/Assets/js/libs/lightslider.js"
+      )
+
+      SPComponentLoader.loadScript(
+        "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"
+      ).then(() => {
+        SPComponentLoader.loadScript(
+          "/IntranetDemo/Assets/js/main.js"
+        );
+
+      });
+
+
+    });
+
+  }
+
+
 
   public render(): void {
     this.domElement.innerHTML = `
     <section class="hotline-numbers p-3 pt-0">
-    <div class="main-heading position-relative d-flex align-items-center">
-      <span class="position-relative d-inline-block handset-icon"></span> hotline numbers
-    </div>
-    <div class="d-flex justify-content-around bord-btm text-primary" id="title">
-    </div>
-    <div class="d-flex justify-content-around bold mt-1" id="hotLineNumber">
-   
-    </div>
-  </section>`;
+                  <div class="main-heading position-relative d-flex align-items-center">
+                    <span class="position-relative d-inline-block handset-icon"></span> hotline numbers
+                  </div>
+                  <div id="title" class="d-flex justify-content-around bord-btm text-primary">
+                   
+                  </div>
+                  <div id="hotLineNumber" class="d-flex justify-content-around bold mt-1">
+                    
+                  </div>
+                </section>`;
       this.getItems();
   }
 

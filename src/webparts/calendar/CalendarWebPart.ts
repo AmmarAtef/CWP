@@ -8,6 +8,7 @@ import { escape } from '@microsoft/sp-lodash-subset';
 import { SPComponentLoader } from "@microsoft/sp-loader";
 import styles from './CalendarWebPart.module.scss';
 import * as strings from 'CalendarWebPartStrings';
+import * as $ from 'jquery';
 import 'jqueryui';
 export interface ICalendarWebPartProps {
   description: string;
@@ -15,18 +16,56 @@ export interface ICalendarWebPartProps {
 
 export default class CalendarWebPart extends BaseClientSideWebPart<ICalendarWebPartProps> {
 
-  constructor(){
+  constructor() {
     super();
     SPComponentLoader.loadCss(
-      "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
-      );
+      "/IntranetDemo/Assets/css/libs/bootstrap.min.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/all.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/lightslider.css"
+    );
+
+    SPComponentLoader.loadCss(
+      "/IntranetDemo/Assets/css/libs/jquery-ui.css"
+    );
+
+    SPComponentLoader.loadCss(
+
+      "/IntranetDemo/Assets/css/main.css"
+    );
+
+
+    SPComponentLoader.loadScript(
+      "/IntranetDemo/Assets/js/libs/jquery.min.js"
+    ).then(() => {
+      SPComponentLoader.loadScript(
+        "/IntranetDemo/Assets/js/libs/lightslider.js"
+      )
+
+      SPComponentLoader.loadScript(
+        "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"
+      ).then(() => {
+        SPComponentLoader.loadScript(
+          "/IntranetDemo/Assets/js/main.js"
+        );
+        
+      });
+
+     
+    });
+
   }
   public render(): void {
 
     this.domElement.innerHTML = `
-    <div>
-      <div id="datepicker"></div>
-    </div>`;
+    <div class="col-lg-5 col-md-12 col-sm-12">
+                    <div id="datepicker"></div>
+                  </div>`;
     this.BindDatePicker();
   }
   public BindDatePicker()
