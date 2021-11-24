@@ -6,13 +6,13 @@
 		  <FieldRefs>
            
 		<FieldRef ID="{499b783c-9473-4d01-856f-c12a83d3b8fb}"
-            Name="PollTitle"
+            Name="PollQuestion"
             DisplayName="Title"
             Required="TRUE"/>
 
 
 		<Field ID="{a0036a3c-21ae-4ab9-92ec-7a0cb6c37457}"
-            Name="PollQuestions"
+            Name="PollChoices"
             DisplayName="Description"
             Required="TRUE" />
 
@@ -27,16 +27,16 @@
 		<Fields>
 
 	<Field ID="{499b783c-9473-4d01-856f-c12a83d3b8fb}"
-            Name="PollTitle"
-            DisplayName="Title"
+            Name="PollQuestion"
+            DisplayName="Question"
             Type="Text"
             Required="TRUE"
             Group="Poll Columns" />
 
 
 <Field ID="{a0036a3c-21ae-4ab9-92ec-7a0cb6c37457}"
-            Name="PollQuestions"
-            DisplayName="Description"
+            Name="PollChoices"
+            DisplayName="Choices"
             Type="Note"
             Required="TRUE"
             Group="Poll Columns" />
@@ -72,8 +72,8 @@
 				<RowLimit Paged="TRUE">30</RowLimit>
 				<ViewFields>
 
-					<FieldRef Name="PollTitle"></FieldRef>
-					<FieldRef Name="PollQuestions"></FieldRef>
+					<FieldRef Name="PollQuestion"></FieldRef>
+					<FieldRef Name="PollChoices"></FieldRef>
 
 					
 				</ViewFields>
