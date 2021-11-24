@@ -43,7 +43,7 @@ export default class ProfileWebPart extends BaseClientSideWebPart<IProfileWebPar
     ).then(() => {
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/lightslider.js"
-      )
+      );
 
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"

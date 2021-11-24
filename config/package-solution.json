@@ -3,7 +3,7 @@
   "solution": {
     "name": "mannai-common-web-parts-client-side",
     "id": "89972152-6ab2-4705-b222-109cae82c46f",
-    "version": "1.0.2.2",
+    "version": "1.0.2.3",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "features": [
@@ -22,7 +22,8 @@
             "quickLinksSchema.xml",
             "newsSchema.xml",
             "performanceSchema.xml",
-            "promotionsSchema.xml"
+            "promotionsSchema.xml",
+            "pollSchema.xml"
           ]
         }
       }

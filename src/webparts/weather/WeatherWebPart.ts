@@ -47,7 +47,7 @@ export default class WeatherWebPart extends BaseClientSideWebPart<IWeatherWebPar
     ).then(() => {
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/lightslider.js"
-      )
+      );
 
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"

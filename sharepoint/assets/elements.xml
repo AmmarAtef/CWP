@@ -304,4 +304,50 @@
             Url="Lists/Performance">
      </ListInstance>
 
+
+<!-- Poll -->
+<Field ID="{499b783c-9473-4d01-856f-c12a83d3b8fb}"
+            Name="PollTitle"
+            DisplayName="Title"
+            Type="Text"
+            Required="TRUE"
+            Group="Poll Columns" />
+
+
+<Field ID="{a0036a3c-21ae-4ab9-92ec-7a0cb6c37457}"
+            Name="PollQuestions"
+            DisplayName="Description"
+            Type="Note"
+            Required="TRUE"
+            Group="Poll Columns" />
+
+
+
+<ContentType ID="0x01003d5e75c755bb46e1b9afc3bfb9f6461f" 
+            Name="PollContentType" 
+            Group="Poll Content Type" 
+            Description="This is the Content Type for Poll">
+        <FieldRefs>
+            <FieldRef ID="{499b783c-9473-4d01-856f-c12a83d3b8fb}" /> 
+            <FieldRef ID="{a0036a3c-21ae-4ab9-92ec-7a0cb6c37457}" /> 
+        </FieldRefs>
+</ContentType> 
+
+    <ListInstance 
+            CustomSchema="pollSchema.xml"
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="Polls" 
+            Description="Polls Details List created using SharePoint Framework"
+            TemplateType="100"
+            Url="Lists/Polls">
+     </ListInstance>
+
+
+
+
+
+
+
+
+
 </Elements>

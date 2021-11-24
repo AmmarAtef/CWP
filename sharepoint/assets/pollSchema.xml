@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="HotLine" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/HotLine" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/" EnableContentTypes="TRUE">
+	<MetaData>
+		<ContentTypes>
+			<ContentType ID="0x01003d5e75c755bb46e1b9afc3bfb9f6461f" Name="PollContentType" Group="Poll Content Type" Description="This is the Content Type for Poll" Inherits="TRUE" Version="0">
+		  <FieldRefs>
+           
+		<FieldRef ID="{499b783c-9473-4d01-856f-c12a83d3b8fb}"
+            Name="PollTitle"
+            DisplayName="Title"
+            Required="TRUE"/>
+
+
+		<Field ID="{a0036a3c-21ae-4ab9-92ec-7a0cb6c37457}"
+            Name="PollQuestions"
+            DisplayName="Description"
+            Required="TRUE" />
+
+
+        </FieldRefs>
+			</ContentType>
+			<ContentTypeRef ID="0x01">
+				<Folder TargetName="Item" />
+			</ContentTypeRef>
+			<ContentTypeRef ID="0x0120" />
+		</ContentTypes>
+		<Fields>
+
+	<Field ID="{499b783c-9473-4d01-856f-c12a83d3b8fb}"
+            Name="PollTitle"
+            DisplayName="Title"
+            Type="Text"
+            Required="TRUE"
+            Group="Poll Columns" />
+
+
+<Field ID="{a0036a3c-21ae-4ab9-92ec-7a0cb6c37457}"
+            Name="PollQuestions"
+            DisplayName="Description"
+            Type="Note"
+            Required="TRUE"
+            Group="Poll Columns" />
+
+    </Fields>
+		<Views>
+
+
+			<View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+				<Toolbar Type="Standard" />
+				<XslLink Default="TRUE">main.xsl</XslLink>
+				<RowLimit Paged="TRUE">30</RowLimit>
+				<ViewFields>
+
+					<FieldRef Name="LinkTitleNoMenu"></FieldRef>
+				</ViewFields>
+				<Query>
+					<OrderBy>
+
+						<FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+					</OrderBy>
+				</Query>
+				<ParameterBindings>
+					<ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+					<ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+					<ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+				</ParameterBindings>
+			</View>
+			<View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+				<Toolbar Type="Standard" />
+				<XslLink Default="TRUE">main.xsl</XslLink>
+				<JSLink>clienttemplates.js</JSLink>
+				<RowLimit Paged="TRUE">30</RowLimit>
+				<ViewFields>
+
+					<FieldRef Name="PollTitle"></FieldRef>
+					<FieldRef Name="PollQuestions"></FieldRef>
+
+					
+				</ViewFields>
+				<Query>
+					<OrderBy>
+
+						<FieldRef Name="ID"></FieldRef>
+					</OrderBy>
+				</Query>
+				<ParameterBindings>
+					<ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+					<ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+				</ParameterBindings>
+			</View>
+		</Views>
+		<Forms>
+			<Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+			<Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+		</Forms>
+	</MetaData>
+</List>

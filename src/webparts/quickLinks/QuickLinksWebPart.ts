@@ -53,7 +53,7 @@ export default class QuickLinksWebPart extends BaseClientSideWebPart<IQuickLinks
     ).then(() => {
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/lightslider.js"
-      )
+      );
 
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"

@@ -52,7 +52,7 @@ export default class OurPerformanceWebPart extends BaseClientSideWebPart<IOurPer
     ).then(() => {
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/lightslider.js"
-      )
+      );
 
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"

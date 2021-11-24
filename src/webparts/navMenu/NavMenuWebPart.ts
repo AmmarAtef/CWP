@@ -45,7 +45,7 @@ export default class NavMenuWebPart extends BaseClientSideWebPart<INavMenuWebPar
     ).then(() => {
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/lightslider.js"
-      )
+      );
 
       SPComponentLoader.loadScript(
         "/IntranetDemo/Assets/js/libs/jquery-ui.min.js"
